@@ -1,40 +1,60 @@
 import { NavLink } from 'react-router-dom'
-import { PostContainer, PostContent, PostHeader } from './styles'
-import { CalendarBlank, ChatCircle, GithubLogo } from 'phosphor-react'
+import {
+  PostContainer,
+  PostContent,
+  PostHeader,
+  PostInfo,
+  PostLinks,
+} from './styles'
+import {
+  ArrowSquareOut,
+  CalendarBlank,
+  CaretLeft,
+  ChatCircle,
+  GithubLogo,
+} from 'phosphor-react'
+
+import ReactMarkdown from 'react-markdown'
 
 export function Post() {
   return (
     <PostContainer>
       <PostHeader>
-        <div>
-          <NavLink to="#">Voltar</NavLink>
-          <a href="">VER NO GITHUB</a>
-        </div>
+        <PostLinks>
+          <NavLink to="#">
+            <CaretLeft size={18} />
+            Voltar
+          </NavLink>
+          <a href="">
+            VER NO GITHUB
+            <ArrowSquareOut size={18} />
+          </a>
+        </PostLinks>
         <h1>JavaScript data types and data structures</h1>
-        <div>
+        <PostInfo>
           <span>
-            <GithubLogo size={18} weight="fill" />
+            <GithubLogo size={18} weight="fill" color="#3A536B" />
             marcospaulo12345
           </span>
           <span>
-            <CalendarBlank size={18} weight="fill" />
+            <CalendarBlank size={18} weight="fill" color="#3A536B" />
             Há 1 dia
           </span>
           <span>
-            <ChatCircle size={18} weight="fill" />4 comentários
+            <ChatCircle size={18} weight="fill" color="#3A536B" />4 comentários
           </span>
-        </div>
+        </PostInfo>
       </PostHeader>
 
       <PostContent>
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
+        <ReactMarkdown>
+          **Programming languages all have built-in data structures, but these
+          often differ from one language to another**. This article attempts to
           list the built-in data structures available in JavaScript and what
           properties they have. These can be used to build other data
           structures. Wherever possible, comparisons with other languages are
           drawn.
-        </p>
+        </ReactMarkdown>
       </PostContent>
     </PostContainer>
   )
