@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import {
   PostContainer,
   PostContent,
@@ -17,6 +17,8 @@ import {
 import ReactMarkdown from 'react-markdown'
 
 export function Post() {
+  const { postNumber } = useParams()
+  console.log(postNumber)
   return (
     <PostContainer>
       <PostHeader>

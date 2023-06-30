@@ -20,6 +20,7 @@ export const CardPostContainer = styled.section`
   header {
     display: flex;
     align-items: start;
+    justify-content: space-between;
     gap: 1rem;
 
     h3 {
